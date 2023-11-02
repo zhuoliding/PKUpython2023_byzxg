@@ -1,0 +1,25 @@
+name: subtract1
+source code: |
+  input: '11000'
+  blank: ' '
+  start state: start
+  table:
+    start:
+      [0,1]: R
+      ' ': {L: carry}
+    carry:
+      1: {write: 0,L: place}
+      0: {write: 1,L: carry}
+      ' ': {L: done}
+    place:
+      ' ': {R: mut}
+    mut:
+      0: {write: ' ',L: done}
+    done:
+      
+positions:
+  start: {x: 381.32, y: 100.05, fixed: false}
+  carry: {x: 294.74, y: 213.72, fixed: false}
+  place: {x: 439.63, y: 219.27, fixed: false}
+  mut: {x: 484.29, y: 353.39, fixed: false}
+  done: {x: 340.61, y: 349.08, fixed: false}

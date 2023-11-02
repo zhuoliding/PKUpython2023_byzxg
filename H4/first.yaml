@@ -1,0 +1,27 @@
+name: first
+source code: |
+  input: '111111'
+  blank: ' '
+  start state: right
+  table:
+  #scan to the rightmost digit
+    right:
+      1  : R
+      0  : R
+      ' ': {L: carry}
+    carry:
+      1  : {write: 0,L: carry}
+      0  : {write: 1,L: left}
+      ' ': {write: 1,L: left}
+    left:
+      [1,0]: {L: left}
+      ' '  : {R: done}
+    done:
+    
+    
+      
+positions:
+  right: {x: 491.14, y: 184.93, fixed: false}
+  carry: {x: 467.86, y: 325.1, fixed: false}
+  left: {x: 326.09, y: 331.92, fixed: false}
+  done: {x: 314.87, y: 190.18, fixed: false}

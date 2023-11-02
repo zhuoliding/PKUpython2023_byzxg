@@ -1,0 +1,25 @@
+name: add2
+source code: |
+  input: '11111'
+  blank: ' '
+  start state: start
+  table:
+    start:
+      [0,1]: R
+      ' ': {L: begin}
+    begin:
+      0: {L: carry}
+      1: {L: carry}
+    carry:
+      0      : {write: 1, L: done}
+      ' '    : {write: 1, L: done}
+      1      : {write: 0, L}
+    done:
+    
+    
+      
+positions:
+  start: {x: 537.85, y: 257.3, fixed: false}
+  begin: {x: 403.94, y: 298.91, fixed: false}
+  carry: {x: 395.08, y: 154.6, fixed: false}
+  done: {x: 281.88, y: 240.83, fixed: false}
